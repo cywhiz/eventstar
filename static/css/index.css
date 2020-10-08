@@ -1,0 +1,60 @@
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Verdana';
+  font-size: 14px;
+  color: white;
+  background-image: url('/static/img/bg.jpg');
+  opacity: 0.9;
+}
+
+.center {
+  text-align: center;
+}
+
+input[type='text'],
+#city {
+  box-shadow: 0 0 15px #87ceeb;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+}
+
+.checkbox {
+  transform: scale(1.5);
+}
+
+.checkbox > label {
+  font-weight: bold;
+  text-shadow: 2px 2px 10px blue;
+}
+
+.btn {
+}
+
+#btnGo {
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#logo {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  #container {
+    width: 40%;
+    margin: 0 auto;
+  }
+}

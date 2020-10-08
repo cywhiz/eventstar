@@ -1,0 +1,94 @@
+body {
+  font-family: 'Open Sans';
+}
+
+.center {
+  text-align: center;
+}
+
+input[type='text'],
+#city {
+  box-shadow: 0 0 15px #87ceeb;
+}
+
+#container {
+  padding: 20px;
+}
+
+.price {
+  font-size: 18px;
+}
+
+.red {
+  color: red;
+}
+
+.center {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.link {
+  padding: 0 10px;
+  display: block;
+}
+
+.strike {
+  background: linear-gradient(
+    to left top,
+    transparent 47.75%,
+    currentColor 49.5%,
+    currentColor 50.5%,
+    transparent 52.25%
+  );
+}
+
+.tableheader {
+  background-color: #dddddd;
+  font-size: 16px;
+}
+
+.eventimg {
+  height: 100px;
+  width: 100px;
+  padding: 10px;
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+
+.btn {
+  width: 100%;
+}
+
+#logo {
+  width: 100%;
+}
+
+ul {
+  padding-left: 0;
+}
+
+@media (min-width: 768px) {
+  #container {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
+  #logo {
+    width: 420px;
+    height: 90px;
+  }
+
+  .link {
+    display: inline;
+  }
+}
