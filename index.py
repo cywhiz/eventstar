@@ -4,12 +4,13 @@ from collections import OrderedDict
 
 app = Flask(__name__)
 
-
 def getCities():
     # Get cities from the Goldstar API
     cities = {}
+    headers = {}
+    headers["user-agent"] = "Mozilla/5.0"
     url = "https://www.goldstar.com/api/territories.json"
-    json = requests.get(url).json()
+    json = requests.get(url, headers=headers).json()
 
     for i in json:
         cityUrl = i["slug"].lower()
@@ -20,21 +21,22 @@ def getCities():
 
     return cities
 
-
 def getCityId(cityName):
     # Get city ID from the Goldstar API, given city name
+    headers = {}
+    headers["user-agent"] = "Mozilla/5.0"
     url = "https://www.goldstar.com/api/territories.json"
-    json = requests.get(url).json()
+    json = requests.get(url, headers=headers).json()
     cityId = next(i for i in json if i["name"] == cityName)["id"]
 
     return str(cityId)
-
 
 # ========== HOMEPAGE ==========
 @app.route("/")
 def index():
     # Get the list of cities
     cities = getCities()
+    print(cities)
 
     return render_template("index.html", cities=cities)
 
@@ -63,7 +65,9 @@ def results():
         url += "&from_date=" + fromDate + "&to_date=" + toDate
 
     # Get the json list of events
-    json = requests.get(url).json()
+    headers = {}
+    headers["user-agent"] = "Mozilla/5.0"
+    json = requests.get(url, headers=headers).json()
 
     # Filter the listings to show only the FREE events
     if free:
